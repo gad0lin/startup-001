@@ -23,7 +23,7 @@ end
 
 
 remote_file "/opt/startup/heroku-install.sh" do
-  source "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh"
+   source "https://toolbelt.heroku.com/install-ubuntu.sh"
    not_if { ::File.exists?("/opt/startup/heroku-install.sh") } 
    notifies :run, "script[install_heroku]", :immediately
 end
